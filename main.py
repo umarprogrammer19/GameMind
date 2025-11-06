@@ -36,10 +36,28 @@ QUESTIONS = [
 
 def run_quiz():
     score = 0
+
     print("🎯 Welcome to the CLI Quiz!")
     name = input("Enter your name: ")
+
     print(f"Hello {name}! Let's start...\n")
     time.sleep(1)
+
+    for i, q in enumerate(QUESTIONS, start=1):
+        print(f"Q{i}: {q['question']}")
+
+        for idx, opt in enumerate(q["options"], start=1):
+            try:
+                choice = int(input("Your answer (1-4): "))
+            except ValueError:
+                choice = 0
+
+            if choice == q["answer"]:
+                print("Correct!\n")
+                score += 1
+            else:
+                print(f"Wrong! Correct answer: {q['options'][q['answer'] - 1]}\n")
+                time.sleep(0.5)
 
 
 if __name__ == "__main__":
