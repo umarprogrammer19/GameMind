@@ -59,6 +59,16 @@ def run_quiz():
                 print(f"Wrong! Correct answer: {q['options'][q['answer'] - 1]}\n")
                 time.sleep(0.5)
 
+    print("🎉 Quiz Complete!")
+    print(f"Your score: {score}/{len(QUESTIONS)}")
+
+    if score == 5:
+        print("🏆 Perfect score! Great job!")
+    elif score >= 3:
+        print("👏 Good effort!")
+    else:
+        print("💪 Keep practicing!")
+
 
 if __name__ == "__main__":
     run_quiz()
