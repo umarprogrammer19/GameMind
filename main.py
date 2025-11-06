@@ -1,3 +1,5 @@
+import time
+
 QUESTIONS = [
     {
         "question": "What does 'CPU' stand for?",
@@ -32,4 +34,13 @@ QUESTIONS = [
 ]
 
 
-    
+def run_quiz():
+    score = 0
+    print("🎯 Welcome to the CLI Quiz!")
+    name = input("Enter your name: ")
+    print(f"Hello {name}! Let's start...\n")
+    time.sleep(1)
+
+
+if __name__ == "__main__":
+    run_quiz()
